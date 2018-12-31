@@ -7,18 +7,13 @@ def addtime(thistotal, thisin):
     # split and set up time lists
     totnums = thistotal.split(":")
     innums = thisin.split(":")
-    
-    # print(totnums, innums)
-    # print(totnums[-1], innums[-1])
-    # print(totnums[-2], innums[-2])
-    
+
     if len(totnums) != len(innums):
         if len(totnums) < len(innums):
             totnums.insert(0, "00")
         else:
             innums.insert(0, "00")
-        # print(totnums[-3], innums[-3])
-        
+
     for i in range(0, (-1 * len(innums)), -1):
         slicetotal = int(totnums[i - 1]) + int(innums[i - 1]) 
         
@@ -45,6 +40,5 @@ while myin != "0":
         myin = raw_input(mystr)
 
     if myin != "0":
-        # total = 
         total = addtime(total, myin)
         print(total)
