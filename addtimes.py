@@ -1,9 +1,10 @@
 import sys
 
+
 def addtime(thistotal, thisin):
-    #time string should be checked
+    # time string should be checked
     
-    #split and set up time lists
+    # split and set up time lists
     totnums = thistotal.split(":")
     innums = thisin.split(":")
     
@@ -18,18 +19,19 @@ def addtime(thistotal, thisin):
             innums.insert(0, "00")
         # print(totnums[-3], innums[-3])
         
-    for i in range (0, (-1 * len(innums)), -1):
+    for i in range(0, (-1 * len(innums)), -1):
         slicetotal = int(totnums[i - 1]) + int(innums[i - 1]) 
         
         if (slicetotal > 60) and ((i - 1) != -3):
-            slicetotal  = slicetotal % 60
+            slicetotal = slicetotal % 60
             totnums[i - 2] = int(totnums[i - 2]) + (slicetotal // 60) + 1
         
         totnums[i - 1] = str(slicetotal).zfill(2)
     
-    newTotal = ":".join(totnums)
+    newtotal = ":".join(totnums)
 
-    return (newTotal) 
+    return newtotal
+
 
 myin = "x"
 total = "00:00:00"
